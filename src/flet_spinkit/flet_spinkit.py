@@ -49,7 +49,7 @@ class FletSpinkit(ConstrainedControl):
         self.size = size
 
     def _get_control_name(self):
-        return "fletspinkit"
+        return "flet_spinkit"
 
     # color
     @property
