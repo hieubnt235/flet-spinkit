@@ -45,7 +45,7 @@ class FletSpinkit(ConstrainedControl):
         self.value = value
 
     def _get_control_name(self):
-        return "flet_spinkit"
+        return "fletspinkit"
 
     # value
     @property

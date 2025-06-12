@@ -4,7 +4,7 @@ import 'spinkit.dart';
 
 CreateControlFactory createControl = (CreateControlArgs args) {
   switch (args.control.type) {
-    case "flet_spinkit":
+    case "fletspinkit":
       return FletSpinkitControl(
         parent: args.parent,
         control: args.control,
