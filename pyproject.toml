@@ -4,7 +4,7 @@ name = "flet-spinkit"
 version = "0.1.0"
 description = "FletSpinkit control for Flet"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.13"
 authors = [
     { name = "Flet contributors", email = "you@example.com" }
 ]
@@ -23,22 +23,22 @@ Issues = "https://github.com/MyGithubAccount/flet-spinkit/issues"
 [tool.setuptools.package-data]
 "flutter.flet_spinkit" = ["**/*"]
 
-#[tool.uv]
-#dev-dependencies = [
-#    "flet[all]==0.28.3",
-#    "mkdocs",
-#    "mkdocs-material",
-#    "mkdocstrings[python]"
-#]
-#
-#[tool.poetry.group.dev.dependencies]
-#flet = {extras = ["all"], version = "0.28.3"}
-#mkdocs = "*"
-#mkdocstrings = { extras = ["python"], version = "*" }
-#mkdocs-material = "*"
-#
-#[tool.setuptools]
-#license-files = []
+[tool.uv]
+dev-dependencies = [
+    "flet[all]==0.28.3",
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings[python]"
+]
+
+[tool.poetry.group.dev.dependencies]
+flet = {extras = ["all"], version = "0.28.3"}
+mkdocs = "*"
+mkdocstrings = { extras = ["python"], version = "*" }
+mkdocs-material = "*"
+
+[tool.setuptools]
+license-files = []
 
 [build-system]
 requires = ["setuptools"]
