@@ -1,5 +1,6 @@
 import 'package:flet/flet.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class FletSpinkitControl extends StatelessWidget {
   final Control? parent;
@@ -13,8 +14,15 @@ class FletSpinkitControl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String text = control.attrString("value", "abc")!;
-    Widget myControl = Text(text);
+    // String text = control.attrString("value", "abc")!;
+    // Widget myControl = Text(text);
+    var color = control.attrColor("color", context);
+    var size = control.attrDouble("size");
+    Widget myControl = SpinKitRotatingCircle(
+      color: color,
+      size: size ?? 100,
+    );
+
 
     return constrainedControl(context, myControl, parent, control);
   }

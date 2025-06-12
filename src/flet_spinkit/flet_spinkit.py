@@ -3,10 +3,12 @@ from typing import Any, Optional
 
 from flet.core.constrained_control import ConstrainedControl
 from flet.core.control import OptionalNumber
+from flet.core.types import ColorEnums, ColorValue
+
 
 class FletSpinkit(ConstrainedControl):
     """
-    FletSpinkit Control description.
+    FletSpinkit Control.
     """
 
     def __init__(
@@ -28,7 +30,8 @@ class FletSpinkit(ConstrainedControl):
         #
         # FletSpinkit specific
         #
-        value: Optional[str] = None,
+        color: Optional[ColorValue] = None,
+        size: OptionalNumber = None,
     ):
         ConstrainedControl.__init__(
             self,
@@ -42,19 +45,27 @@ class FletSpinkit(ConstrainedControl):
             bottom=bottom,
         )
 
-        self.value = value
+        self.color = color
+        self.size = size
 
     def _get_control_name(self):
         return "fletspinkit"
 
-    # value
+    # color
     @property
-    def value(self):
-        """
-        Value property description.
-        """
-        return self._get_attr("value")
+    def color(self) -> Optional[ColorValue]:
+        return self.__color
 
-    @value.setter
-    def value(self, value):
-        self._set_attr("value", value)
+    @color.setter
+    def color(self, value: Optional[ColorValue]):
+        self.__color = value
+        self._set_enum_attr("color", value, ColorEnums)
+
+    # size
+    @property
+    def size(self):
+        return self._get_attr("size")
+
+    @size.setter
+    def size(self, value):
+        self._set_attr("size", value)
